@@ -1,0 +1,50 @@
+.main {
+
+    padding-top: 1px;
+
+}
+
+.border {
+    border-right: 1px solid $yellow;
+}
+
+.info {
+
+    text-align: center;
+    margin-top: 90px;
+    
+    &__name {
+        font: 36px $font-Roboto;
+        color: #666666;
+        letter-spacing: 0.72px;
+        position: relative;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        
+        &::after {
+            @include size(100px, 1px);
+            
+            content: '';
+            left: 50%;
+            top: auto;
+            right: auto;
+            bottom: 0;
+            background-color: $yellow;
+            position: absolute;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__proffesion {
+        font: 400 24px $font-Raleway;
+        color: #666666;
+        margin-bottom: 25px;
+        line-height: 36px;
+    }
+
+    &__icon {
+        color: #666666;
+        font-size: 13px;
+    }
+
+}
