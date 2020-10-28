@@ -24,3 +24,66 @@ body, html {
 body {
     font-family: $font-Raleway;
 }
+
+.arrow {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+
+	.icon-cheveron-left {
+		@include size (25px);
+
+		font-size: 22px;
+		color: $yellow;
+		border: 1px solid transparent;
+		border-radius: 50%;
+		transition: all .5s;
+		cursor: pointer;
+
+		&--rotate {
+			transform: rotate(180deg);
+		}
+	
+		&:hover {
+			background-color: $yellow;
+			border-color: $black;
+			color: $black;
+		}
+	}
+}
+
+.dots {
+	margin-top: 40px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 100px;
+	
+
+	.dot {
+		border: 1px solid $yellow;
+		background-color: #fff;
+		border-radius: 50%;
+		width: 10px;
+		height: 10px;
+		margin-right: 10px;
+		transition: all .3s;
+		cursor: pointer;
+
+		&:first-child {
+			background-color: $yellow;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&:hover {
+			background-color: $yellow;
+		}
+	}
+
+}
+
+

@@ -1,21 +1,54 @@
 .main {
-
     padding-top: 1px;
-
+ 
 }
 
-.border {
-    border-right: 1px solid $yellow;
+.line {
+    position: relative;
+
+    &::after {
+        @include size(1px, 100%);
+        @include pos($t:0, $l: 50%);
+
+        content: '';
+        background-color: $yellow;
+    }
+}
+
+.pic{
+    padding: 90px 0;
+}
+
+.avatar {
+    @include pos($pos: relative, $z: 0);
+    border: 1px solid $yellow;
+    padding: 15px;
+
+
+    &::before, &::after {
+        @include size(50%, 111%);
+        @include pos($l: 25%, $t: -2px);
+        content: '';
+        background-color: #fff;
+        z-index: -1;
+    }
+
+    &::after {
+        transform: rotate(-90deg);
+    }
+
+    &__img {
+        border: 1px solid $yellow;
+    }
 }
 
 .info {
-
-    text-align: center;
     margin-top: 90px;
+    text-align: center;
     
     &__name {
         font: 36px $font-Roboto;
-        color: #666666;
+        color: $grey;
         letter-spacing: 0.72px;
         position: relative;
         padding-bottom: 30px;
@@ -37,14 +70,77 @@
 
     &__proffesion {
         font: 400 24px $font-Raleway;
-        color: #666666;
+        color: $grey;
         margin-bottom: 25px;
         line-height: 36px;
     }
 
     &__icon {
-        color: #666666;
+        color: #cccccc;
         font-size: 13px;
+        margin-bottom: 30px;
+        
+        .icon-border {
+            border: 2px solid currentColor;
+            border-radius: 30px;
+            padding: 5px;
+            margin-right: 3px;
+            cursor: pointer;
+            transition: all .5s;
+
+            &:hover {
+                background-color: $yellow;
+                color: $black; 
+            }
+
+        } 
     }
 
+    &__text {
+        color: #333333;
+        font: 500 14px $font-Raleway;
+        line-height: 24px;
+        margin: 0 -30px;
+    }
+
+    &__slider {
+        @include size(20px, 4px);
+        margin: 10px auto 25px;
+        background: $yellow;
+        position: relative;
+
+        &::before, &::after {
+            @include size(10px, 100%);
+            @include pos($t: 0);
+
+            content: '';
+            background: $yellow;
+        }
+
+        &::before {
+            left: -15px;
+        }
+
+        &::after {
+            right: -15px;
+        }
+
+    }
+
+    &__link {
+        color: $grey;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 5px 10px;
+        font: 700 14px $font-Open;
+        border: 1px solid $yellow;
+        transition: all .3s;
+        user-select: none;
+
+        &:hover {
+            background: $yellow;
+            color: $black;
+            border-color: $black;
+        }
+    }
 }
